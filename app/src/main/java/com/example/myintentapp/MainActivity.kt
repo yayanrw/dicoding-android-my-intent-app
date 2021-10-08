@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var tvResult: TextView
-    @SuppressLint("SetTextI18n")
+
     private val resultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
@@ -32,11 +32,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val btnMoveWithDataActivity: Button = findViewById(R.id.btn_move_activity_data)
         val btnMoveWithObject: Button = findViewById(R.id.btn_move_activity_object)
         val btnDialPhone: Button = findViewById(R.id.btn_dial_number)
+        val btnMoveForResult: Button = findViewById(R.id.btn_move_for_result)
+        tvResult = findViewById(R.id.tv_result)
 
         btnMoveActivity.setOnClickListener(this)
         btnMoveWithDataActivity.setOnClickListener(this)
         btnMoveWithObject.setOnClickListener(this)
         btnDialPhone.setOnClickListener(this)
+        btnMoveForResult.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
